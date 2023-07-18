@@ -1,0 +1,79 @@
+{
+  "6a1e5592": {
+    "Description": {
+      "Left": "some gray object placed on bottom, large red base with some plugable slots on the top",
+      "right": "embed the tiles into their matching slot on the base, then change the tiles color to blue"
+    },
+    "DSL": "extract_obj,  embed_to,  coloring_obj"
+  },
+  "0a938d79": {
+    "Description": {
+      "Left": "Two single-tiles on the border of the a grid",
+      "Right": "extend the single-tiles to lines, count the distance between the two lines, repeat this two lines pattern separated by the distance between the two lines until to the right of the grid if the two lines are vertical, to the bottom of the grid if they are horizontal"
+    },
+    "DSL": "extract_obj, extend_tile,  distance_two_lines, repeated_until"
+  },
+  "0b148d64": {
+    "Description": {
+      "Left": "Four large object with different colors located on the upper left corner, upper right corner, lower left corner, lower right corner, objects have some holes",
+      "Right": "count the number of objects by color, output the object that has unique color"
+    },
+    "DSL": "extract_obj, group_object_by_color, select_min, select_object_by_props"
+  },
+  "0ca9ddb6": {
+    "Description": {
+      "Left": "Several Single tile scattered in a large grid",
+      "Right": "Extend the red tite by pattern a, blue tite by pattern b, keep the same for other tiles"
+    },
+    "DSL": "extract_obj, extend_tile"
+  },
+  "0d3d703e": {
+    "Description": {
+      "Left": "A grid with several stripes of different color",
+      "Right": "Change the color of the stripe using the corresponding color mapping, color mapping to be extracted using the given examples"
+    },
+    "DSL": "extract_obj, extract_props_from_obj, build_mapping"
+  },
+  "00d62c1b": {
+    "Description": {
+      "Left": "A large object with some holes in a grid",
+      "Right": "Fill the holes with the given color in the example"
+    },
+    "DSL": "extract_obj, fill_holes"
+  },
+  "0dfd9992": {
+    "Description": {
+        "Left": "A grid with repeated pattern, has some black holes",
+        "Right": "Fill the holes using the repated pattern"
+    },
+    "DSL": "find_repated_pattern, fill_missing_using_pattern"
+  },
+  "0e206a2e": {
+      "Description": {
+        "Left": "Some connected objects formed with tiles of different colors, there are several three tiles forming a group that seems to be part of the connected object",
+        "Right": "Move the object to the matching place defined by the three tiles"
+      },
+      "DSL": "extract_obj, move_obj_with_constraints"
+  },
+  "1a07d186": {
+    "Description": {
+      "Left": "two vertical or horizontal lines plus a few single tiles",
+      "Right": "Move the tiles towards the line of the same color until reach"
+    },
+    "DSL": "extract_obj, extract_props_from_obj => lines, move_object_towards"
+  },
+  "1b2d62fb": {
+    "Description": {
+      "Left": "A grid that is separated identical size left and right part by a blue vertical line, there are some black objects on the left and right with red background",
+      "Right": "Flip the left to right,  extract the tiles of object that overlaps after flipping, create a grid of background of black color of the same size of left or right, change the overlapped tile to blue and place them into the new grid"
+    },
+    "DSL": "extract_obj, flip_left_to_right => overlapped tiles,  create_grid_of_same_size(color), place_tiles"
+  },
+  "1b60fb0c": {
+    "Description": {
+      "Left": "A grid of black background, a large blue objects in the center, this object seems to be rotation symmetry around a two-tile square or a single-tile square",
+      "Right": "Fill the missing part of the rotation symmetry pattern by color red"
+    },
+    "DSL": "find_symmetry_pattern, fill_missing_using_pattern"
+  }
+}

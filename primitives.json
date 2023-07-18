@@ -1,0 +1,24 @@
+{
+  "DSL": [
+    "embed_to(obj_a, obj_b)",
+    "extract_obj(grid)",
+    "coloring_obj(obj)",
+    "extend_tile(tile, pattern)",
+    "distance_two_lines(line_a, line_b)",
+    "repeated_until(object, border)",
+    "group_object_by_color",
+    "select_min",
+    "select_object_by_props",
+    "extract_props_from_obj",
+    "build_mapping",
+    "fill_holes",
+    "move_obj_to_matching_place(obj, part_of_obj)",
+    "move_obj_towards(obj_a, obj_b)",
+    "find_repated_pattern",
+    "fill_missing_using_mpattern",
+    "flip_left_to_right",
+    "create_grid_of_same_size(color)",
+    "place_tiles(grid, tiles)",
+    "find_symmetry_pattern"
+  ]
+}
